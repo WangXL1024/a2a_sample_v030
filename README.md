@@ -17,14 +17,14 @@
 
 
 ## 后端启动(python 命令启动)
-- mcp_server/__main__.py
-- remote_server/coding_agent/__main__.py
-- remote_server/auto_recommend/__main__.py
-- remote_server/loan_suggest/__main__.py
-- remote_server/loan_pre-examination/__main__.py
-- remote_server/chat_agent/__main__.py
-- client/multi_agent/__main__.py(使用多Agent架构的话)
-- client/one_client/__main__.py(只使用单Agent的话)
+- mcp_server/\_\_main\_\_.py
+- remote_server/coding_agent/\_\_main\_\_.py
+- remote_server/auto_recommend/\_\_main\_\_.py
+- remote_server/loan_suggest/\_\_main\_\_.py
+- remote_server/loan_pre-examination/\_\_main\_\_.py
+- remote_server/chat_agent/\_\_main\_\_.py
+- client/multi_agent/\_\_main\_\_.py(使用多Agent架构的话)
+- client/one_client/\_\_main\_\_.py(只使用单Agent的话)
 > 注意端口号不要冲突
 
 ## 测试用前端启动(npm install 后 npm run dev)
