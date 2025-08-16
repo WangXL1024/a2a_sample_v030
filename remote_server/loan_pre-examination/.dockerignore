@@ -1,0 +1,5 @@
+**/__pycache__
+*.pyc
+.env
+.DS_Store
+logs/  # 避免挂载时覆盖容器内日志

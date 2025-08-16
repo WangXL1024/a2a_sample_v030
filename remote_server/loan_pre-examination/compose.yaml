@@ -1,0 +1,17 @@
+services:
+  loan_pre-examination_agent:
+    build: .  # 使用当前目录的 Dockerfile
+    container_name: loan_pre-examination_server
+    ports:
+      - "10030:10030"  # 映射主机 10030 → 容器 10030
+    #environment:
+    #  - GAODE_API_KEY=${GAODE_API_KEY}  # 从环境变量注入密钥
+    restart: unless-stopped  # 异常时自动重启
+    volumes:
+      - ./logs:/app/logs  # 挂载日志目录（可选）
+    networks:
+      - auto_finance_net
+
+networks:
+  auto_finance_net:  # 自定义网络（便于后续扩展其他服务）
+    driver: bridge

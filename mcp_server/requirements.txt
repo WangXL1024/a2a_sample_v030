@@ -1,0 +1,6 @@
+requests==2.32.4
+fastmcp==2.9.2
+asyncio==3.4.3
+langchain_redis==0.2.3
+langchain_community==0.3.27
+pydantic==2.11.7

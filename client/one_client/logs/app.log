@@ -1,0 +1,694 @@
+2025-08-14 14:38:18,971 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 14:38:18,973 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 14:38:18,977 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 14:38:18,983 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"artifacts":null,"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","history":[{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"1065f404d3584d1fbd0b5a1353348827","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"写个Java Hello World"}],"referenceTaskIds":null,"role":"user","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}],"id":"6a6eaf0a-4348-4aec-b629-92d66586b74b","kind":"task","metadata":null,"status":{"message":null,"state":"submitted","timestamp":null}}}
+2025-08-14 14:38:18,983 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"artifacts":null,"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","history":[{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"1065f404d3584d1fbd0b5a1353348827","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"写个Java Hello World"}],"referenceTaskIds":null,"role":"user","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}],"id":"6a6eaf0a-4348-4aec-b629-92d66586b74b","kind":"task","metadata":null,"status":{"message":null,"state":"submitted","timestamp":null}}}
+2025-08-14 14:38:19,520 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"64d932e4-8792-43cc-9d3b-0a7ce742fc16","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"```"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.516638+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,520 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"64d932e4-8792-43cc-9d3b-0a7ce742fc16","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"```"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.516638+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,570 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"99af22e8-da55-4a51-a4e3-bdbb5af5e63c","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"java\npublic"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.567001+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,570 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"99af22e8-da55-4a51-a4e3-bdbb5af5e63c","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"java\npublic"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.567001+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,657 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"046a8625-1234-4ea0-9027-652c6b080f19","metadata":null,"parts":[{"kind":"text","metadata":null,"text":" class HelloWorld {\n"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.653809+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,657 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"046a8625-1234-4ea0-9027-652c6b080f19","metadata":null,"parts":[{"kind":"text","metadata":null,"text":" class HelloWorld {\n"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.653809+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,753 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"c5c689a7-49ae-4230-882a-248a05af63b3","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"    public static"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.750508+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,753 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"c5c689a7-49ae-4230-882a-248a05af63b3","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"    public static"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.750508+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,777 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"f01b6009-bc8b-46f7-b937-b380aba39822","metadata":null,"parts":[{"kind":"text","metadata":null,"text":" void main(String[] args)"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.774396+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,777 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"f01b6009-bc8b-46f7-b937-b380aba39822","metadata":null,"parts":[{"kind":"text","metadata":null,"text":" void main(String[] args)"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.774396+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,893 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"f4bb4e4f-2f71-44dc-b4de-7434d408db08","metadata":null,"parts":[{"kind":"text","metadata":null,"text":" {\n        System.out.println(\""}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.889607+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,893 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"f4bb4e4f-2f71-44dc-b4de-7434d408db08","metadata":null,"parts":[{"kind":"text","metadata":null,"text":" {\n        System.out.println(\""}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.889607+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,904 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"72706023-adf0-46aa-b93c-fffec45d37df","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"Hello, World!\");\n    }\n"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.900362+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,904 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"72706023-adf0-46aa-b93c-fffec45d37df","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"Hello, World!\");\n    }\n"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.900362+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,924 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"7806cd9c-801d-443d-a0ab-30a27f76bba6","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"}\n```"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.920200+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,924 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"7806cd9c-801d-443d-a0ab-30a27f76bba6","metadata":null,"parts":[{"kind":"text","metadata":null,"text":"}\n```"}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.920200+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,932 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"5aff66bd-cc9f-4eb1-8753-2c8440122cd5","metadata":null,"parts":[{"kind":"text","metadata":null,"text":""}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.928397+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,932 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":false,"kind":"status-update","metadata":null,"status":{"message":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","extensions":null,"kind":"message","messageId":"5aff66bd-cc9f-4eb1-8753-2c8440122cd5","metadata":null,"parts":[{"kind":"text","metadata":null,"text":""}],"referenceTaskIds":null,"role":"agent","taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"},"state":"working","timestamp":"2025-08-14T06:38:19.928397+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,943 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"append":null,"artifact":{"artifactId":"4e2c66d2-f573-4e04-b3b0-d983bcda25c7","description":null,"extensions":null,"metadata":null,"name":"coding_result","parts":[{"kind":"text","metadata":null,"text":""}]},"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","kind":"artifact-update","lastChunk":true,"metadata":null,"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,943 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"append":null,"artifact":{"artifactId":"4e2c66d2-f573-4e04-b3b0-d983bcda25c7","description":null,"extensions":null,"metadata":null,"name":"coding_result","parts":[{"kind":"text","metadata":null,"text":""}]},"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","kind":"artifact-update","lastChunk":true,"metadata":null,"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,948 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":true,"kind":"status-update","metadata":null,"status":{"message":null,"state":"completed","timestamp":"2025-08-14T06:38:19.939108+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 14:38:19,948 - client_agent - INFO - 收到server智能体的响应：{"id":"0bb01a2b-9ba2-44e9-b435-7473bc698d97","jsonrpc":"2.0","result":{"contextId":"e9505716-b8c5-4603-8fc1-bce4f200c2a0","final":true,"kind":"status-update","metadata":null,"status":{"message":null,"state":"completed","timestamp":"2025-08-14T06:38:19.939108+00:00"},"taskId":"6a6eaf0a-4348-4aec-b629-92d66586b74b"}}
+2025-08-14 15:08:23,537 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:08:23,540 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:08:23,553 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:10:17,272 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x000001A5B4D2FD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x000001A5B4D2FD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:10:17,289 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object JsonRpcTransport.send_message_streaming at 0x000001A5B4B7B220>
+asyncgen: <async_generator object JsonRpcTransport.send_message_streaming at 0x000001A5B4B7B220>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\a2a\client\transports\jsonrpc.py", line 166, in send_message_streaming
+    yield response.root.result
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\a2a\client\transports\jsonrpc.py", line 152, in send_message_streaming
+    async with aconnect_sse(
+               ~~~~~~~~~~~~^
+        self.httpx_client,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        **modified_kwargs,
+        ^^^^^^^^^^^^^^^^^^
+    ) as event_source:
+    ^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\contextlib.py", line 235, in __aexit__
+    await self.gen.athrow(value)
+RuntimeError: athrow(): asynchronous generator is already running
+2025-08-14 15:10:32,329 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:10:32,331 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:10:32,341 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:10:59,698 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x00000186D8079CF0>
+asyncgen: <async_generator object aconnect_sse at 0x00000186D8079CF0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:10:59,701 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x00000186D80CFD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x00000186D80CFD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:11:10,965 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:11:10,967 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:11:10,981 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:16:18,202 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x0000022AC69E9CF0>
+asyncgen: <async_generator object aconnect_sse at 0x0000022AC69E9CF0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:16:18,255 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x0000022AC6A3FD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x0000022AC6A3FD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:16:25,008 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:16:25,010 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:16:25,023 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:20:55,171 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x00000218D4C1DCF0>
+asyncgen: <async_generator object aconnect_sse at 0x00000218D4C1DCF0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:20:55,174 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x00000218D4C6FD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x00000218D4C6FD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:21:01,118 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:21:01,120 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:21:01,130 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:23:47,083 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x00000184FF4D1CF0>
+asyncgen: <async_generator object aconnect_sse at 0x00000184FF4D1CF0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:23:47,085 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x00000184FF52FD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x00000184FF52FD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:23:53,089 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:23:53,090 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:23:53,103 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:26:24,430 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x000002A3E7811CF0>
+asyncgen: <async_generator object aconnect_sse at 0x000002A3E7811CF0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:26:24,432 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x000002A3E786FD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x000002A3E786FD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:26:31,518 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:26:31,520 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:26:31,532 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:28:01,827 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:28:01,828 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:28:01,833 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:30:36,540 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:30:36,543 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:30:36,547 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:33:21,754 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x00000193E4779CF0>
+asyncgen: <async_generator object aconnect_sse at 0x00000193E4779CF0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:33:21,756 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x00000193E47CFD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x00000193E47CFD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:33:27,294 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:33:27,296 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:33:27,301 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:36:23,351 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:36:23,353 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:36:23,358 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:56:08,068 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:56:08,070 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:56:08,076 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:56:38,298 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object JsonRpcTransport.send_message_streaming at 0x000002BD5337B220>
+asyncgen: <async_generator object JsonRpcTransport.send_message_streaming at 0x000002BD5337B220>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\httpx_sse\_api.py", line 75, in aconnect_sse
+    yield EventSource(response)
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\a2a\client\transports\jsonrpc.py", line 166, in send_message_streaming
+    yield response.root.result
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\a2a\client\transports\jsonrpc.py", line 152, in send_message_streaming
+    async with aconnect_sse(
+               ~~~~~~~~~~~~^
+        self.httpx_client,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        **modified_kwargs,
+        ^^^^^^^^^^^^^^^^^^
+    ) as event_source:
+    ^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\contextlib.py", line 235, in __aexit__
+    await self.gen.athrow(value)
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\httpx_sse\_api.py", line 74, in aconnect_sse
+    async with client.stream(method, url, headers=headers, **kwargs) as response:
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\contextlib.py", line 235, in __aexit__
+    await self.gen.athrow(value)
+RuntimeError: athrow(): asynchronous generator is already running
+2025-08-14 15:56:45,473 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:56:45,476 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:56:45,481 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:57:07,411 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:57:07,414 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:57:07,418 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:58:27,463 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x0000020253AF9BE0>
+asyncgen: <async_generator object aconnect_sse at 0x0000020253AF9BE0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:58:27,525 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x0000020253B4FD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x0000020253B4FD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 15:58:32,465 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:58:32,467 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:58:32,471 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 15:59:19,677 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 15:59:19,679 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 15:59:19,683 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:02:30,787 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object aconnect_sse at 0x0000027857075BE0>
+asyncgen: <async_generator object aconnect_sse at 0x0000027857075BE0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 16:02:30,790 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x00000278570CFD30>
+asyncgen: <async_generator object AsyncClient.stream at 0x00000278570CFD30>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 16:02:46,868 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:02:46,870 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:02:46,874 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:05:11,278 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:05:11,279 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:05:11,284 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:07:23,803 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:07:23,805 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:07:23,809 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:08:48,509 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object JsonRpcTransport.send_message_streaming at 0x0000012FE924B220>
+asyncgen: <async_generator object JsonRpcTransport.send_message_streaming at 0x0000012FE924B220>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\a2a\client\transports\jsonrpc.py", line 166, in send_message_streaming
+    yield response.root.result
+GeneratorExit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\site-packages\a2a\client\transports\jsonrpc.py", line 152, in send_message_streaming
+    async with aconnect_sse(
+               ~~~~~~~~~~~~^
+        self.httpx_client,
+        ^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        **modified_kwargs,
+        ^^^^^^^^^^^^^^^^^^
+    ) as event_source:
+    ^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\contextlib.py", line 235, in __aexit__
+    await self.gen.athrow(value)
+RuntimeError: athrow(): asynchronous generator is already running
+2025-08-14 16:08:48,511 - asyncio - ERROR - an error occurred during closing of asynchronous generator <async_generator object AsyncClient.stream at 0x0000012FE93FFBA0>
+asyncgen: <async_generator object AsyncClient.stream at 0x0000012FE93FFBA0>
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\01_Work\04_Soft\01_Programs\miniconda3\envs\a2a_env\Lib\asyncio\runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+RuntimeError: aclose(): asynchronous generator is already running
+2025-08-14 16:08:54,310 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:08:54,313 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:08:54,317 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:10:07,196 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:10:07,198 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:10:07,202 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:12:07,920 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:12:07,922 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:12:07,927 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:28:32,962 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:28:32,963 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:28:32,967 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:35:07,348 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:35:07,352 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:35:07,363 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:40:14,864 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:40:14,871 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:40:14,886 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:44:31,445 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:44:31,448 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:44:31,458 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 16:50:02,554 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 16:50:02,554 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 16:50:02,851 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 16:50:02,858 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': '编写代码的智能体', 'name': '代码智能体', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': '编代码的智能体', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '88', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 16:50:02,858 - client_agent - INFO - 尝试初始化client
+2025-08-14 16:50:02,858 - client_agent - INFO - 尝试初始化client
+2025-08-14 16:50:02,859 - client_agent - INFO - 已成功初始化client
+2025-08-14 16:50:02,859 - client_agent - INFO - 已成功初始化client
+2025-08-14 16:50:02,885 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 19:42:29,069 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 19:42:29,069 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 19:42:29,348 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 19:42:29,351 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': 'An Agent for Coding', 'name': 'Coding Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'An Agent for Coding', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '888', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 19:42:29,351 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:42:29,351 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:42:29,352 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:42:29,352 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:42:29,377 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 19:43:50,838 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 19:43:50,838 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 19:43:51,110 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 19:43:51,113 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': 'An Agent for Coding', 'name': 'Coding Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'An Agent for Coding', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '888', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 19:43:51,113 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:43:51,113 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:43:51,114 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:43:51,114 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:43:51,119 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 19:46:48,565 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 19:46:48,565 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10010.well-known/agent-card.json
+2025-08-14 19:46:48,832 - httpx - INFO - HTTP Request: GET http://localhost:10010/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 19:46:48,833 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10010/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': 'An Agent for Coding', 'name': 'Coding Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'An Agent for Coding', 'examples': ['编写一个hello world程序', '编写一个快速排序的python程序'], 'id': '888', 'name': 'coding agent', 'tags': ['编码', '代码', 'coding']}], 'url': 'http://localhost:10010/', 'version': '1.0.0'}
+2025-08-14 19:46:48,834 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:46:48,834 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:46:48,834 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:46:48,834 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:46:48,839 - httpx - INFO - HTTP Request: POST http://localhost:10010/ "HTTP/1.1 200 OK"
+2025-08-14 19:55:57,886 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10020.well-known/agent-card.json
+2025-08-14 19:55:57,886 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10020.well-known/agent-card.json
+2025-08-14 19:55:58,168 - httpx - INFO - HTTP Request: GET http://localhost:10020/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-14 19:55:58,172 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10020/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text'], 'defaultOutputModes': ['text'], 'description': 'An Agent for Chat with user', 'name': 'Chat Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'An Agent for Chat with user', 'examples': ['给我讲个笑话', '今天大连天气怎么样？'], 'id': '999', 'name': 'chat agent', 'tags': ['chat']}], 'url': 'http://localhost:10020/', 'version': '1.0.0'}
+2025-08-14 19:55:58,173 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:55:58,173 - client_agent - INFO - 尝试初始化client
+2025-08-14 19:55:58,175 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:55:58,175 - client_agent - INFO - 已成功初始化client
+2025-08-14 19:55:58,197 - httpx - INFO - HTTP Request: POST http://localhost:10020/ "HTTP/1.1 200 OK"
+2025-08-16 11:51:54,364 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:51:54,364 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:51:54,675 - httpx - INFO - HTTP Request: GET http://localhost:10030/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-16 11:51:54,681 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10030/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text', 'text/plain'], 'defaultOutputModes': ['text', 'text/plain'], 'description': 'Query relevant data from the database for automobile recommendation to user', 'name': 'Automobile Recommendation Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'Query relevant data from the database for automobile recommendation to user', 'examples': ['Recommend a car for me', 'What is the best car for my budget?'], 'id': '666', 'name': 'Automobile Recommendation', 'tags': ['Automobile Recommendation', 'Auto Recommend']}], 'url': 'http://localhost:10030/', 'version': '1.0.0'}
+2025-08-16 11:51:54,684 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:51:54,684 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:51:54,685 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:51:54,685 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:51:54,721 - httpx - INFO - HTTP Request: POST http://localhost:10030/ "HTTP/1.1 200 OK"
+2025-08-16 11:52:56,414 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:52:56,414 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:52:56,675 - httpx - INFO - HTTP Request: GET http://localhost:10030/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-16 11:52:56,678 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10030/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text', 'text/plain'], 'defaultOutputModes': ['text', 'text/plain'], 'description': 'Query relevant data from the database for automobile recommendation to user', 'name': 'Automobile Recommendation Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'Query relevant data from the database for automobile recommendation to user', 'examples': ['Recommend a car for me', 'What is the best car for my budget?'], 'id': '666', 'name': 'Automobile Recommendation', 'tags': ['Automobile Recommendation', 'Auto Recommend']}], 'url': 'http://localhost:10030/', 'version': '1.0.0'}
+2025-08-16 11:52:56,679 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:52:56,679 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:52:56,680 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:52:56,680 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:52:56,687 - httpx - INFO - HTTP Request: POST http://localhost:10030/ "HTTP/1.1 200 OK"
+2025-08-16 11:58:06,845 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:58:06,845 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:58:07,120 - httpx - INFO - HTTP Request: GET http://localhost:10030/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-16 11:58:07,125 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10030/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text', 'text/plain'], 'defaultOutputModes': ['text', 'text/plain'], 'description': 'Query relevant data from the database for automobile recommendation to user', 'name': 'Automobile Recommendation Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'Query relevant data from the database for automobile recommendation to user', 'examples': ['Recommend a car for me', 'What is the best car for my budget?'], 'id': '666', 'name': 'Automobile Recommendation', 'tags': ['Automobile Recommendation', 'Auto Recommend']}], 'url': 'http://localhost:10030/', 'version': '1.0.0'}
+2025-08-16 11:58:07,126 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:58:07,126 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:58:07,127 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:58:07,127 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:58:07,180 - httpx - INFO - HTTP Request: POST http://localhost:10030/ "HTTP/1.1 200 OK"
+2025-08-16 11:59:40,444 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:59:40,444 - client_agent - INFO - 尝试获取agent card，url为http://localhost:10030.well-known/agent-card.json
+2025-08-16 11:59:40,715 - httpx - INFO - HTTP Request: GET http://localhost:10030/.well-known/agent-card.json "HTTP/1.1 200 OK"
+2025-08-16 11:59:40,719 - a2a.client.card_resolver - INFO - Successfully fetched agent card data from http://localhost:10030/.well-known/agent-card.json: {'capabilities': {'streaming': True}, 'defaultInputModes': ['text', 'text/plain'], 'defaultOutputModes': ['text', 'text/plain'], 'description': 'Query relevant data from the database for automobile recommendation to user', 'name': 'Automobile Recommendation Agent', 'preferredTransport': 'JSONRPC', 'protocolVersion': '0.3.0', 'skills': [{'description': 'Query relevant data from the database for automobile recommendation to user', 'examples': ['Recommend a car for me', 'What is the best car for my budget?'], 'id': '666', 'name': 'Automobile Recommendation', 'tags': ['Automobile Recommendation', 'Auto Recommend']}], 'url': 'http://localhost:10030/', 'version': '1.0.0'}
+2025-08-16 11:59:40,720 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:59:40,720 - client_agent - INFO - 尝试初始化client
+2025-08-16 11:59:40,722 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:59:40,722 - client_agent - INFO - 已成功初始化client
+2025-08-16 11:59:40,734 - httpx - INFO - HTTP Request: POST http://localhost:10030/ "HTTP/1.1 200 OK"

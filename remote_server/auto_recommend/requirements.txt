@@ -1,0 +1,13 @@
+a2a-sdk==0.2.9
+click==8.1.8
+httpx==0.28.1
+langchain_community==0.3.25
+langchain_core==0.3.65
+langchain_mcp_adapters==0.1.7
+langchain_openai==0.3.14
+langgraph==0.4.8
+dashscope==1.22.2
+pydantic==2.11.3
+uvicorn==0.34.2
+sqlalchemy==2.0.40
+mysql-connector-python==9.3.0
