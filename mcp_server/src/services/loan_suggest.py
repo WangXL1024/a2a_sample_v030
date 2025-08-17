@@ -4,6 +4,12 @@ from langchain_redis import RedisConfig, RedisVectorStore
 from langchain_community.embeddings import DashScopeEmbeddings
 from pydantic import BaseModel, Field
 from typing import List
+import logging.config
+import os
+
+log_config_path = os.path.abspath("src/config/logging.conf")
+logging.config.fileConfig(log_config_path, encoding='utf-8')
+logger = logging.getLogger(__name__)
 
 # 定义返回结果的数据模型
 class LoanSchemeResult(BaseModel):
@@ -34,12 +40,14 @@ class LoanSuggestService:
             return result.model_dump()
         
         try:
+            logger.info(f"Initializing embedding model for model_id: {model_id}")
             # 初始化嵌入模型
             embedding_model = DashScopeEmbeddings(
                 model="text-embedding-v1",
                 dashscope_api_key=load_key("DASHSCOPE_API_KEY"),
             )
             
+            logger.info("Configuring Redis vector store")
             # 配置Redis向量存储
             redis_url = "redis://localhost:6379"
             config = RedisConfig(
@@ -47,9 +55,11 @@ class LoanSuggestService:
                 redis_url=redis_url
             )
             
+            logger.info("Creating vector store instance")
             # 创建向量存储实例
             vector_store = RedisVectorStore(embedding_model, config=config)
             
+            logger.info("Getting retriever and invoking it")
             # 获取检索器并检索相关文档
             retriever = vector_store.as_retriever(
                 search_kwargs={"k": 20}  # 最多返回3个最相关的结果
@@ -58,11 +68,13 @@ class LoanSuggestService:
             # 调用检索器（使用to_thread适配同步方法为异步）
             docs = await retriever.ainvoke(model_id)
             
+            logger.info(f"Retrieved {len(docs)} documents for model_id: {model_id}")
             # 处理检索结果
             result.schemes = [doc.page_content for doc in docs]
             result.count = len(docs)
             
         except Exception as e:
+            logger.error(f"Failed to get the loan scheme for model_id: {model_id}. Error: {str(e)}")
             result.error = f"Failed to get the loan scheme: {str(e)}"
         
         return result.model_dump()

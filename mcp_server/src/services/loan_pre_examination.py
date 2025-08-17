@@ -2,6 +2,16 @@ from pydantic import BaseModel, Field
 from typing import Dict, List, Optional
 from pymongo import MongoClient
 from datetime import datetime
+from pymongo.errors import(
+    ConnectionFailure,
+    OperationFailure
+)
+import logging.config
+import os
+
+log_config_path = os.path.abspath("src/config/logging.conf")
+logging.config.fileConfig(log_config_path, encoding='utf-8')
+logger = logging.getLogger(__name__)
 
 # 定义返回结果的数据模型
 class CreditInfoResult(BaseModel):
@@ -23,20 +33,25 @@ class LoanPreExaminationService:
         Query the user's credit information based on the ID card number.
         Args:
             id_number: ID card number
-        Returns: 
+        Returns:
             the user's credit information
         """
         try:
+            logger.info(f"开始查询身份证号为 {id_number} 的征信信息")
             if not id_number:
+                logger.error("身份证号不能为空")
                 return CreditInfoResult(
                     id_number="",
                     error="身份证号不能为空"
                 ).model_dump()
             
             # 从MongoDB查询数据
+            logger.debug(f"正在查询MongoDB中的数据，条件: {{'id_number': '{id_number}'}}")
             credit_info = credit_collection.find_one({"id_number": id_number})
+            logger.debug(f"查询结果: {credit_info}")
             
             if not credit_info:
+                logger.error(f"未查询到该身份证号的征信信息")
                 return CreditInfoResult(
                     id_number=id_number,
                     error="未查询到该身份证号的征信信息"
@@ -68,12 +83,26 @@ class LoanPreExaminationService:
                                     f"金额{overdue['amount']}元")
                         credit_report.append(overdue_str)
             
+            logger.info(f"成功获取身份证号为 {id_number} 的征信信息")
             return CreditInfoResult(
                 id_number=id_number,
                 credit_report=credit_report
             ).model_dump()
             
+        except ConnectionFailure as e:
+            logger.error(f"MongoDB连接失败: {str(e)}")
+            return CreditInfoResult(
+                id_number=id_number if id_number else "",
+                error=f"MongoDB连接失败: {str(e)}"
+            ).model_dump()
+        except OperationFailure as e:
+            logger.error(f"MongoDB操作失败: {str(e)}")
+            return CreditInfoResult(
+                id_number=id_number if id_number else "",
+                error=f"MongoDB操作失败: {str(e)}"
+            ).model_dump()
         except Exception as e:
+            logger.error(f"查询失败: {str(e)}")
             return CreditInfoResult(
                 id_number=id_number if id_number else "",
                 error=f"查询失败: {str(e)}"
@@ -89,11 +118,20 @@ class LoanPreExaminationService:
             result: the result of the examination (e.g., "passed" or "unpassed")
         """
         try:
+            logger.info(f"开始创建身份证号为 {id_number} 的预审结果")
             examination_result_collection.insert_one({
                 "id_number": id_number,
                 "phone_number": phone_number,
                 "examination_result": result,
                 "examination_time": datetime.now().isoformat()
             })
+            logger.info(f"成功创建身份证号为 {id_number} 的预审结果")
+        except ConnectionFailure as e:
+            logger.error(f"MongoDB连接失败: {str(e)}")
+            return {"error": f"MongoDB连接失败: {str(e)}"}
+        except OperationFailure as e:
+            logger.error(f"MongoDB操作失败: {str(e)}")
+            return {"error": f"MongoDB操作失败: {str(e)}"}
         except Exception as e:
+            logger.error(f"创建预审结果失败: {str(e)}")
             return {"error": f"创建预审结果失败: {str(e)}"}

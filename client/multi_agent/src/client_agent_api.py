@@ -12,6 +12,13 @@ from src.agent_services import (
     AgentSelector,
     AgentQueryService
 )
+import logging.config
+import os
+
+log_config_path = os.path.abspath("src/config/logging.conf")
+logging.config.fileConfig(log_config_path, encoding='utf-8')
+logger = logging.getLogger(__name__)
+
 class QueryRequest(BaseModel):
     user_input: str
     session_id: str
@@ -54,16 +61,18 @@ app.add_middleware(
 @app.post("/stream-query")
 async def handle_stream_query(request: QueryRequest):
     services = app.state.services
-    
-    async def generate():
-        async for content in services['query_service'].handle_stream_query(request.user_input,request.session_id):
-            # 将字典转换为JSON字符串
-            json_data = json.dumps(content)
-            # 按照SSE格式返回，每个事件以两个换行符结束
-            yield f"data: {json_data}\n\n"     
-
-    return StreamingResponse(
-        generate(), 
-        media_type="text/event-stream",
-        headers={"Cache-Control": "no-cache"}
-    )
+    try:
+        async def generate():
+            async for content in services['query_service'].handle_stream_query(request.user_input, request.session_id):
+                # 将字典转换为JSON字符串
+                json_data = json.dumps(content)
+                # 按照SSE格式返回，每个事件以两个换行符结束
+                yield f"data: {json_data}\n\n"
+        return StreamingResponse(
+            generate(), 
+            media_type="text/event-stream",
+            headers={"Cache-Control": "no-cache"}
+        )
+    except Exception as e:
+        logger.error(f"Error handling stream query: {e}", exc_info=True)
+        return {"error": "Internal Server Error"}, 500
