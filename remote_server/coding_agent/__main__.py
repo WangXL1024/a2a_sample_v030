@@ -6,9 +6,9 @@ from a2a.server.tasks import (
     InMemoryTaskStore,
 )
 import uvicorn
+from pydantic import ValidationError
 import logging.config
 import os
-from pydantic import ValidationError
 
 log_config_path = os.path.abspath("src/config/logging.conf")
 logging.config.fileConfig(log_config_path, encoding='utf-8')
@@ -16,8 +16,9 @@ logger = logging.getLogger(__name__)
 
 def main(host, port):
     logger.info(f"Starting CodingAgent service on host: {host}, port: {port}")
-    # 创建AgentSkill - 添加参数校验处理
+    
     try:
+        # 创建AgentSkill
         skill = AgentSkill(
             id="111",
             name="coding agent",
@@ -26,17 +27,9 @@ def main(host, port):
             examples=["编写一个hello world程序", "编写一个快速排序的python程序"],
         )
         logger.info("AgentSkill created")
-    except ValidationError as ve:
-        logger.error(f"Invalid AgentSkill configuration: {ve}")
-        logger.debug(f"Validation details: {ve.errors()}")
-        return
-    except Exception as e:
-        logger.exception(f"Unexpected error creating AgentSkill: {e}")
-        return
 
-    # 创建AgentCard - 添加特定异常处理
-    try:
-        coding_agent_card = AgentCard(
+        # 创建AgentCard
+        agent_card = AgentCard(
             name="Coding Agent",
             description="An Agent for Coding",
             url=f'http://localhost:{port}/',
@@ -48,10 +41,10 @@ def main(host, port):
         )
         logger.info("AgentCard created")
     except ValidationError as ve:
-        logger.error(f"Invalid AgentCard configuration: {ve}")
+        logger.error(f"Invalid configuration: {ve}")
         return
     except Exception as e:
-        logger.exception(f"Unexpected error creating AgentCard: {e}")
+        logger.exception(f"Unexpected error: {e}")
         return
 
     # 创建请求处理器 - 区分配置错误和未知错误
@@ -71,7 +64,7 @@ def main(host, port):
     # 创建Starlette应用
     try:
         server = A2AStarletteApplication(
-            agent_card=coding_agent_card,
+            agent_card=agent_card,
             http_handler=request_handler,
         )
         logger.info("A2AStarletteApplication created")

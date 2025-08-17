@@ -1,20 +1,19 @@
 import logging
 from collections.abc import AsyncIterable
-from typing import Any, Dict, Literal
+from typing import Any, Dict
 from langchain_core.messages import AIMessageChunk
 from langchain_core.runnables import RunnableConfig
-from pydantic import BaseModel, Field
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langgraph.prebuilt import create_react_agent
 from langchain_community.chat_models import ChatTongyi
 from src.config.load_key import load_key
 from langgraph.checkpoint.redis import AsyncRedisSaver
+import os
+import logging.config
 
+log_config_path = os.path.abspath("src/config/logging.conf")
+logging.config.fileConfig(log_config_path,encoding='utf-8')
 logger = logging.getLogger(__name__)
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-)
 
 mcp_client = MultiServerMCPClient(
     {
@@ -64,37 +63,54 @@ class LoanPreExaminationAgent:
     )
 
     def __init__(self):
-        """Init loan pre-examination Agent
-        """
-        #ChatOpenAI不支持下面Agent实例中的response_format设定
-        # self.model = ChatOpenAI(
-        self.model = ChatTongyi(
-            base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-            api_key=load_key("DASHSCOPE_API_KEY"),
-            model="qwen-plus",
-        )
+        logger.info("Initializing loan pre-examination Agent")
+        try:
+            #ChatOpenAI不支持下面Agent实例中的response_format设定
+            # self.model = ChatOpenAI(
+            self.model = ChatTongyi(
+                base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+                api_key=load_key("DASHSCOPE_API_KEY"),
+                model="qwen-plus",
+            )
+        except Exception as e:
+            logger.error(f"Failed to initialize ChatTongyi model: {e}")
+            raise
 
     async def initialize(self):
-        self.checkpointer = AsyncRedisSaver("redis://localhost:6379")
-        self.tools = await mcp_client.get_tools()
-        self.graph = create_react_agent(
-            self.model,
-            tools=self.tools,
-            checkpointer=self.checkpointer,
-            prompt=self.SYSTEM_INSTRUCTION,
-            # response_format=ResponseFormat,
-        )
+        logger.info("Initializing Redis checkpointer for Agent")
+        try:
+            self.checkpointer = AsyncRedisSaver("redis://localhost:6379")
+            logger.info("Redis checkpointer initialized")
+            self.tools = await mcp_client.get_tools()
+            self.graph = create_react_agent(
+                self.model,
+                tools=self.tools,
+                checkpointer=self.checkpointer,
+                prompt=self.SYSTEM_INSTRUCTION,
+                # response_format=ResponseFormat,
+            )
+            logger.info("React agent created with Redis checkpointer")
+        except Exception as e:
+            logger.error(f"Failed to initialize Redis checkpointer or create React agent: {e}")
+            raise
 
     async def stream(
-        self, messages ,session_id
-    ) -> AsyncIterable[Dict[str, Any]]: 
+        self, messages, session_id
+    ) -> AsyncIterable[Dict[str, Any]]:
+        logger.info(f"Starting stream processing for session ID: {session_id}")
         config: RunnableConfig = {'configurable': {'thread_id': session_id}}
-        async for item in self.graph.astream(input={"messages": messages},config=config, stream_mode='messages'):
-                if isinstance(item[0],AIMessageChunk):
+        try:
+            async for item in self.graph.astream(input={"messages": messages}, config=config, stream_mode='messages'):
+                if isinstance(item[0], AIMessageChunk):
+                    logger.debug(f"Received message chunk: {item[0].content}")
                     yield {
                         'is_final_answer': False,
                         'content': item[0].content,
                     }
+        except Exception as e:
+            logger.error(f"Error during stream processing for session ID {session_id}: {e}")
+            raise
+        logger.info(f"Stream processing completed for session ID: {session_id}")
         # 循环结束后，发送输出结束的标志
         yield {
             'is_final_answer': True,  # 任务已完成

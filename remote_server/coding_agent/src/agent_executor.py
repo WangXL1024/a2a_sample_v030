@@ -17,9 +17,10 @@ logger = logging.getLogger(__name__)
 
 class CodingAgentExecutor(AgentExecutor):
     def __init__(self) -> None:
-        logger.info("Initializing CodingAgentExecutor")
+        logger.info("Initializing Agent Executor")
         self.agent = CodingAgent()
         asyncio.run(self.agent.initialize())
+        logger.info("Agent Executor initialize completed.")
 
     # 必须实现execute和cancel方法
     async def execute(self, context: RequestContext, event_queue: EventQueue) -> None:

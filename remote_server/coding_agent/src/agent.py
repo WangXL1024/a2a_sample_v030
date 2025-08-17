@@ -31,7 +31,7 @@ class CodingAgent:
     
     # Redis checkpointer 需要单独初始化
     async def initialize(self):
-        logger.info("Initializing Redis checkpointer for CodingAgent")
+        logger.info("Initializing Redis checkpointer for Agent")
         try:
             self.checkpointer = AsyncRedisSaver("redis://localhost:6379")
             logger.info("Redis checkpointer initialized")
@@ -45,6 +45,7 @@ class CodingAgent:
         except Exception as e:
             logger.error(f"Failed to initialize Redis checkpointer or create React agent: {e}")
             raise
+
     async def stream(
         self, messages, session_id
     ) -> AsyncIterable[Dict[str, Any]]:

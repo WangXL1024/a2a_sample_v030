@@ -37,7 +37,7 @@ class LoanSuggestService:
             # 初始化嵌入模型
             embedding_model = DashScopeEmbeddings(
                 model="text-embedding-v1",
-                dashscope_api_key="sk-12574d385818460c84a759673209981a"
+                dashscope_api_key=load_key("DASHSCOPE_API_KEY"),
             )
             
             # 配置Redis向量存储
