@@ -16,16 +16,6 @@ log_config_path = os.path.abspath("src/config/logging.conf")
 logging.config.fileConfig(log_config_path,encoding='utf-8')
 logger = logging.getLogger(__name__)
 
-mcp_client = MultiServerMCPClient(
-    {
-        "auto_finance_mcp": {
-            # "url": "http://host.docker.internal:8000/mcp",
-            "url": "http://localhost:8000/mcp",
-            "transport": "streamable_http",
-        }
-    }
-)
-
 # class ResponseFormat(BaseModel):
 #     """向用户返回响应的标准格式。"""
 
@@ -65,6 +55,7 @@ class LoanSuggestAgent:
                 api_key=load_key("DASHSCOPE_API_KEY"),
                 model="qwen-plus",
             )
+            self.mcp_client = None
         except Exception as e:
             logger.error(f"Failed to initialize ChatTongyi model: {e}")
             raise
@@ -72,9 +63,18 @@ class LoanSuggestAgent:
     async def initialize(self):
         logger.info("Initializing Redis checkpointer for Agent")
         try:
+            self.mcp_client = MultiServerMCPClient(
+                {
+                    "auto_finance_mcp": {
+                        # "url": "http://host.docker.internal:8000/mcp",
+                        "url": "http://localhost:8000/mcp",
+                        "transport": "streamable_http",
+                    }
+                }
+            )
             self.checkpointer = AsyncRedisSaver("redis://localhost:6379")
             logger.info("Redis checkpointer initialized")
-            self.tools = await mcp_client.get_tools()
+            self.tools = await self.mcp_client.get_tools()
             self.graph = create_react_agent(
                 self.model,
                 tools=self.tools,
